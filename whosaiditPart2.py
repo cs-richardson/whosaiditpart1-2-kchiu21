@@ -29,7 +29,6 @@ def get_counts(filename):
                 result_dict[next_key] = result_dict.get(next_key, 0) + 1
                 total = total + 1
     text.close()
-    print ("_total: " + str(total))
     return result_dict
 
 shakespeare_counts = get_counts("hamlet.txt")
