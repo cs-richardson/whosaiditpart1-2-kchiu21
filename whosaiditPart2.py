@@ -24,11 +24,11 @@ def get_counts(filename):
     text = open(filename, "r")
     for key in text.read().split():
         next_key = normalize(key)
-        if next_key == "heart" or next_key == "thou" or next_key == "king" or next_key == "happiness" or next_key == "dance":
-            if next_key:
-                result_dict[next_key] = result_dict.get(next_key, 0) + 1
-                total = total + 1
+        if next_key:
+            result_dict[next_key] = result_dict.get(next_key, 0) + 1
+            total = total + 1
     text.close()
+    result_dict.update( {'_total' : total} )
     return result_dict
 
 shakespeare_counts = get_counts("hamlet.txt")
